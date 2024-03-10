@@ -1,5 +1,13 @@
-﻿using System.Threading.Tasks;
+﻿// file ISceneLoader.cs created by twinkocat
+// 
+// (c) 2024 twinkocat. All rights reserved.
+
+#region
+
+using System.Threading.Tasks;
 using twinkocat.Core.Enums;
+
+#endregion
 
 namespace twinkocat.Core.Interfaces
 {

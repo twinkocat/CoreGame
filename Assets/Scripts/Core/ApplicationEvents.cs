@@ -1,5 +1,13 @@
-﻿using System;
+﻿// file ApplicationEvents.cs created by twinkocat
+// 
+// (c) 2024 twinkocat. All rights reserved.
+
+#region
+
+using System;
 using twinkocat.Core.Bootstrap.Interfaces;
+
+#endregion
 
 namespace twinkocat.Core
 {

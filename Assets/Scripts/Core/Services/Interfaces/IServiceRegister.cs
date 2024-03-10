@@ -1,4 +1,12 @@
-﻿using twinkocat.Core.Bootstrap.Interfaces;
+﻿// file IServiceRegister.cs created by twinkocat
+// 
+// (c) 2024 twinkocat. All rights reserved.
+
+#region
+
+using twinkocat.Core.Bootstrap.Interfaces;
+
+#endregion
 
 namespace twinkocat.Core.Services.Interfaces
 {

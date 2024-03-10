@@ -1,6 +1,14 @@
-﻿using System;
+﻿// file SceneData.cs created by twinkocat
+// 
+// (c) 2024 twinkocat. All rights reserved.
+
+#region
+
+using System;
 using Eflatun.SceneReference;
 using twinkocat.Core.Enums;
+
+#endregion
 
 namespace twinkocat.Core.Scenes
 {

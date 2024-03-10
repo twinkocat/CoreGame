@@ -1,6 +1,14 @@
-﻿using System.Collections.Generic;
+﻿// file AsyncOperationGroup.cs created by twinkocat
+// 
+// (c) 2024 twinkocat. All rights reserved.
+
+#region
+
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+
+#endregion
 
 namespace twinkocat.Core.Scenes
 {

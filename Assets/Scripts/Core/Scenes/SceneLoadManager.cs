@@ -1,10 +1,18 @@
-﻿using System.Collections.Generic;
+﻿// file SceneLoadManager.cs created by twinkocat
+// 
+// (c) 2024 twinkocat. All rights reserved.
+
+#region
+
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using twinkocat.Core.Enums;
 using twinkocat.Core.Utilities;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
+#endregion
 
 namespace twinkocat.Core.Scenes
 {

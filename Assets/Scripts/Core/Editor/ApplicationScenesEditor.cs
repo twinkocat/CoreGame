@@ -1,7 +1,15 @@
-﻿using System;
+﻿// file ApplicationScenesEditor.cs created by twinkocat
+// 
+// (c) 2024 twinkocat. All rights reserved.
+
+#region
+
+using System;
 using System.IO;
 using UnityEditor;
 using UnityEngine;
+
+#endregion
 
 namespace twinkocat.Core.Editor
 {

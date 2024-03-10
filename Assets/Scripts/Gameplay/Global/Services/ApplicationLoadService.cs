@@ -1,6 +1,14 @@
-﻿using twinkocat.Core;
+﻿// file ApplicationLoadService.cs created by twinkocat
+// 
+// (c) 2024 twinkocat. All rights reserved.
+
+#region
+
+using twinkocat.Core;
 using twinkocat.Core.Services;
 using twinkocat.Core.Services.Interfaces;
+
+#endregion
 
 namespace twinkocat.Gameplay.Global.Services
 {

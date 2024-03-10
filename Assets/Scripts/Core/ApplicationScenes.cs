@@ -1,8 +1,16 @@
-﻿using AYellowpaper.SerializedCollections;
+﻿// file ApplicationScenes.cs created by twinkocat
+// 
+// (c) 2024 twinkocat. All rights reserved.
+
+#region
+
 using System.Collections.Generic;
+using AYellowpaper.SerializedCollections;
 using Eflatun.SceneReference;
 using twinkocat.Core.Bootstrap;
 using UnityEngine;
+
+#endregion
 
 namespace twinkocat.Core
 {

@@ -1,4 +1,8 @@
-﻿namespace twinkocat.Core.Interfaces
+﻿// file IStateMachine.cs created by twinkocat
+// 
+// (c) 2024 twinkocat. All rights reserved.
+
+namespace twinkocat.Core.Interfaces
 {
     public interface IStateMachine<TState> where TState : IState
     {

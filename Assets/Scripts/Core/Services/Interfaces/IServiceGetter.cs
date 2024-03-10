@@ -1,4 +1,8 @@
-﻿namespace twinkocat.Core.Services.Interfaces
+﻿// file IServiceGetter.cs created by twinkocat
+// 
+// (c) 2024 twinkocat. All rights reserved.
+
+namespace twinkocat.Core.Services.Interfaces
 {
     public interface IServiceGetter
     {

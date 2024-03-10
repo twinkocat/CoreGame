@@ -1,6 +1,14 @@
-﻿using twinkocat.Core.Bootstrap;
+﻿// file GlobalBootstrapper.cs created by twinkocat
+// 
+// (c) 2024 twinkocat. All rights reserved.
+
+#region
+
+using twinkocat.Core.Bootstrap;
 using twinkocat.Core.Services.Interfaces;
 using twinkocat.Gameplay.Global.Services;
+
+#endregion
 
 namespace twinkocat.Gameplay.Global
 {

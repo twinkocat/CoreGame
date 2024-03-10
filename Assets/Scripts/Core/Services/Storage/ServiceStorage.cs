@@ -1,5 +1,13 @@
-﻿using System.Collections.Generic;
+﻿// file ServiceStorage.cs created by twinkocat
+// 
+// (c) 2024 twinkocat. All rights reserved.
+
+#region
+
+using System.Collections.Generic;
 using twinkocat.Core.Services.Interfaces;
+
+#endregion
 
 namespace twinkocat.Core.Services.Storage
 {

@@ -1,10 +1,19 @@
+// file ApplicationBehaviour.cs created by twinkocat
+// 
+// (c) 2024 twinkocat. All rights reserved.
+
+#region
+
 using System;
 using System.Collections.Generic;
 using twinkocat.Core.Bootstrap;
 using twinkocat.Core.Bootstrap.Interfaces;
+using twinkocat.Core.Services;
 using twinkocat.Core.Utilities;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
+#endregion
 
 namespace twinkocat.Core
 {
@@ -14,7 +23,7 @@ namespace twinkocat.Core
         [SerializeField] private bool _logEnabled;
         [SerializeField] private ApplicationScenes _applicationScenes;
         
-        private readonly Services.ServiceLocator _serviceLocator = Services.ServiceLocator.GetInstance();
+        private readonly ServiceLocator _serviceLocator = ServiceLocator.GetInstance();
         private readonly Dictionary<Scene, IBootstrapper> _activeBootstrapper = new();
 
         private void Awake()

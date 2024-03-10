@@ -1,4 +1,8 @@
-﻿namespace twinkocat.Core.Utilities
+﻿// file Defines.cs created by twinkocat
+// 
+// (c) 2024 twinkocat. All rights reserved.
+
+namespace twinkocat.Core.Utilities
 {
     public static class Defines
     {

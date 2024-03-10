@@ -1,4 +1,12 @@
-﻿using UnityEngine;
+﻿// file LoadingScreen.cs created by twinkocat
+// 
+// (c) 2024 twinkocat. All rights reserved.
+
+#region
+
+using UnityEngine;
+
+#endregion
 
 namespace twinkocat.Core.Scenes
 {

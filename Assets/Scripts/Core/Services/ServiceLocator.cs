@@ -1,9 +1,17 @@
-﻿using System.Collections.Generic;
+﻿// file ServiceLocator.cs created by twinkocat
+// 
+// (c) 2024 twinkocat. All rights reserved.
+
+#region
+
+using System.Collections.Generic;
 using twinkocat.Core.Bootstrap.Interfaces;
 using twinkocat.Core.Services.Interfaces;
 using twinkocat.Core.Services.Storage;
 using twinkocat.Core.Utilities;
 using UnityEngine;
+
+#endregion
 
 namespace twinkocat.Core.Services
 {

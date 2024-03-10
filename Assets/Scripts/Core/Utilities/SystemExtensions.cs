@@ -1,5 +1,13 @@
-﻿using System;
+﻿// file SystemExtensions.cs created by twinkocat
+// 
+// (c) 2024 twinkocat. All rights reserved.
+
+#region
+
+using System;
 using System.Collections.Generic;
+
+#endregion
 
 namespace twinkocat.Core.Utilities
 {
