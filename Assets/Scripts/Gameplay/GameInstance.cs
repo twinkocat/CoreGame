@@ -4,7 +4,6 @@
 
 using twinkocat.Core.Interfaces;
 using twinkocat.Core.Utilities;
-using UnityEngine;
 
 namespace twinkocat.Gameplay
 {
@@ -12,34 +11,6 @@ namespace twinkocat.Gameplay
 
     public interface IGameSubState : ISubState { }
 
-    public class MenuState : IGameState
-    {
-        public void Do()
-        {
-            Debug.Log("do menu state");
-            // MultipleSceneLoader.LoadScenes()
-        }
-
-        public void Exit()
-        {
-        }
-    }
-    
-    public class PauseSubState : IGameSubState
-    {
-        public void DoSubState()
-        {
-            Debug.Log("pause");
-        }
-    }
-    public class PlaySubState : IGameSubState
-    {
-        public void DoSubState()
-        {
-            Debug.Log("play");
-        }
-    }
-    
     public class GameInstance : LazySingleton<GameInstance>, IStateMachine<IGameState, IGameSubState>
     {
         public IGameState     CurrentState     { get; private set; }
@@ -50,6 +21,7 @@ namespace twinkocat.Gameplay
         {
             CurrentState?.Exit();
             CurrentState = newState;
+            CurrentState.Start();
             CurrentState.Do();
         }
 

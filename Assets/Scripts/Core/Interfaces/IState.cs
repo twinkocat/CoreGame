@@ -6,6 +6,7 @@ namespace twinkocat.Core.Interfaces
 {
     public interface IState
     {
+        void Start();
         void Do();
         void Exit();
     }
