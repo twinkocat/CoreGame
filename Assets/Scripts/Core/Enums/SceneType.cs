@@ -10,11 +10,4 @@ namespace twinkocat.Core.Enums
         UI,
         HUD,
     }
-
-    public enum SceneGroup
-    {
-        Menu,
-        Game,
-        Exit,
-    }
 }

@@ -38,9 +38,15 @@ MonoBehaviour:
           asset: {fileID: 102900000, guid: fb71afcdc3ad6f24a88d846ff8f784bb, type: 3}
           guid: fb71afcdc3ad6f24a88d846ff8f784bb
         sceneType: 1
-    - Key: 2
+    - Key: 3
       Value:
       - reference:
           asset: {fileID: 102900000, guid: 69358520a4af52b44854e8abf63b68ff, type: 3}
           guid: 69358520a4af52b44854e8abf63b68ff
+        sceneType: 0
+    - Key: 2
+      Value:
+      - reference:
+          asset: {fileID: 102900000, guid: 134ac9d2b9bba9c45a29769bae420a84, type: 3}
+          guid: 134ac9d2b9bba9c45a29769bae420a84
         sceneType: 0
