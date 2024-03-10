@@ -13,4 +13,8 @@ MonoBehaviour:
   m_Name: ApplicationScene
   m_EditorClassIdentifier: 
   _sceneData:
-    _serializedList: []
+    _serializedList:
+    - Key:
+        asset: {fileID: 0}
+        guid: 00000000000000000000000000000000
+      Value: {fileID: 0}
