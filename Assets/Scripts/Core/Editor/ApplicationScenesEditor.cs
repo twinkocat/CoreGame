@@ -6,6 +6,7 @@
 
 using System;
 using System.IO;
+using twinkocat.Core.Scenes;
 using UnityEditor;
 using UnityEngine;
 
@@ -20,7 +21,7 @@ namespace twinkocat.Core.Editor
         [MenuItem("twinkocat/application_scenes")]
         public static void CreateApplicationSceneAsset()
         {
-            StorageCreatorHelper.TargetStorage<ApplicationScenes>(ApplicationSceneAssetPath);
+            StorageCreatorHelper.TargetStorage<BootstrapperStorage>(ApplicationSceneAssetPath);
         }
     }
     

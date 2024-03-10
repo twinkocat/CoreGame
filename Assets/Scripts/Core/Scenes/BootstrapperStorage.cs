@@ -1,4 +1,4 @@
-﻿// file ApplicationScenes.cs created by twinkocat
+﻿// file BootstrapperStorage.cs created by twinkocat
 // 
 // (c) 2024 twinkocat. All rights reserved.
 
@@ -12,13 +12,13 @@ using UnityEngine;
 
 #endregion
 
-namespace twinkocat.Core
+namespace twinkocat.Core.Scenes
 {
-    public class ApplicationScenes : ScriptableObject
+    public class BootstrapperStorage : ScriptableObject
     {
         [SerializedDictionary("SceneRef", "Bootstrapper Prefab")] [SerializeField] 
-        private SerializedDictionary<SceneReference, Bootstrapper> _sceneData;
+        private SerializedDictionary<SceneReference, Bootstrapper> scenes;
         
-        public IDictionary<SceneReference, Bootstrapper> SceneData => _sceneData;
+        public IDictionary<SceneReference, Bootstrapper> Scenes => scenes;
     }
 }

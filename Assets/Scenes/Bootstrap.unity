@@ -234,7 +234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _debugMode: 1
   _logEnabled: 1
-  _applicationScenes: {fileID: 11400000, guid: 260faba9317c1c94998dc930d4d02a1f, type: 2}
+  bootstrapperStorage: {fileID: 11400000, guid: 260faba9317c1c94998dc930d4d02a1f, type: 2}
 --- !u!4 &1673153554
 Transform:
   m_ObjectHideFlags: 0

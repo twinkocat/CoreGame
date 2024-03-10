@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 830730dc96004ecab94c30d5d1b93ae3, type: 3}
-  m_Name: ApplicationScene
+  m_Name: BootstrapperStorage
   m_EditorClassIdentifier: 
-  _sceneData:
+  scenes:
     _serializedList:
     - Key:
-        asset: {fileID: 0}
-        guid: 00000000000000000000000000000000
-      Value: {fileID: 0}
+        asset: {fileID: 102900000, guid: 8c9cfa26abfee488c85f1582747f6a02, type: 3}
+        guid: 8c9cfa26abfee488c85f1582747f6a02
+      Value: {fileID: 664371401216338828, guid: 19e7c02f88ed61043b770c2ad25d5760, type: 3}

@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using twinkocat.Core.Bootstrap;
 using twinkocat.Core.Bootstrap.Interfaces;
+using twinkocat.Core.Scenes;
 using twinkocat.Core.Services;
 using twinkocat.Core.Utilities;
 using UnityEngine;
@@ -21,7 +22,7 @@ namespace twinkocat.Core
     {
         [SerializeField] private bool _debugMode;
         [SerializeField] private bool _logEnabled;
-        [SerializeField] private ApplicationScenes _applicationScenes;
+        [SerializeField] private BootstrapperStorage bootstrapperStorage;
         
         private readonly ServiceLocator _serviceLocator = ServiceLocator.GetInstance();
         private readonly Dictionary<Scene, IBootstrapper> _activeBootstrapper = new();
@@ -72,7 +73,7 @@ namespace twinkocat.Core
 
         private bool TryFindPrefabInStorage(out IBootstrapper prefab, Scene scene)
         {
-            var bootstrapperDictionary = _applicationScenes.SceneData;
+            var bootstrapperDictionary = bootstrapperStorage.Scenes;
 
             if (bootstrapperDictionary.IsNull()) throw new NullReferenceException();
 
