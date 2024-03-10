@@ -47,6 +47,7 @@ namespace twinkocat.Core
             _activeBootstrapper.Add(scene, bootstrapper);
             
             Debug.Log($"{bootstrapper} loaded");
+            ApplicationEvents.OnBootstrapperLoad.SafeInvoke(bootstrapper);
         }
 
         private void OnSceneUnloaded(Scene scene)
