@@ -1,4 +1,4 @@
-﻿// file ApplicationScenesEditor.cs created by twinkocat
+﻿// file BootstrapperStorageEditor.cs created by twinkocat
 // 
 // (c) 2024 twinkocat. All rights reserved.
 
@@ -14,18 +14,18 @@ using UnityEngine;
 
 namespace twinkocat.Core.Editor
 {
-    public static class ApplicationScenesEditor
+    public static class BootstrapperStorageEditor
     {
-        private const string ApplicationSceneAssetPath = "Assets/Configuration/ApplicationScene.asset";
+        private const string ApplicationSceneAssetPath = "Assets/Configuration/BootstrapperStorage.asset";
 
-        [MenuItem("twinkocat/application_scenes")]
+        [MenuItem("twinkocat/bootstrapper_storage")]
         public static void CreateApplicationSceneAsset()
         {
             StorageCreatorHelper.TargetStorage<BootstrapperStorage>(ApplicationSceneAssetPath);
         }
     }
     
-    public partial class StorageCreatorHelper : ScriptableObject
+    public class StorageCreatorHelper : ScriptableObject
     {
         public static void TargetStorage<T>(string assetPath) where T : ScriptableObject
         {

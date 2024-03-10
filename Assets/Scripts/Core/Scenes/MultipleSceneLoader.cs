@@ -16,7 +16,7 @@ using UnityEngine.SceneManagement;
 
 namespace twinkocat.Core.Scenes
 {
-    public static class SceneLoadManager 
+    public static class MultipleSceneLoader 
     {
         private static readonly LoadingScreen LoadingScreen = UnityExtensions.LoadAndInstantiate<LoadingScreen>("LoadingScreen");
 
@@ -25,6 +25,7 @@ namespace twinkocat.Core.Scenes
             var loadedScenes     = new List<string>();
 
             if (loadScreenActive) LoadingScreen.ShowLoading();
+            
             await UnloadScenes(scenesToLoadList);
 
             for (var i = 0; i < SceneManager.sceneCount; i++)

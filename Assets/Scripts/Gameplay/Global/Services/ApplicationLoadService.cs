@@ -18,7 +18,8 @@ namespace twinkocat.Gameplay.Global.Services
 
         private void OnApplicationLoad()
         {
-            
+            GameInstance.Instance.SetState(new MenuState());
+            GameInstance.Instance.SetSubState(new PlaySubState());
             
             ServiceLocator.GetInstance().UnRegisterService<ApplicationLoadService>();
         }
