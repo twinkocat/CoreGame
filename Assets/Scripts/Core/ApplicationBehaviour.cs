@@ -30,8 +30,10 @@ namespace twinkocat.Core
         private void Awake()
         {
             this.DontDestroyOnLoad();
+            
             Defines.IsDebugMode             = _debugMode;
             Debug.unityLogger.logEnabled    = _logEnabled;
+            Coroutines.Initialize(this);
         }
 
         private void Start()

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Utilities
+namespace twinkocat.Core.Utilities
 {
     [DisallowMultipleComponent]
     public abstract class SingletonBehaviour<T> : MonoBehaviour where T : SingletonBehaviour<T>

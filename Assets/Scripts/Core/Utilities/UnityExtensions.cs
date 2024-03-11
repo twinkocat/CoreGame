@@ -4,7 +4,10 @@
 
 #region
 
+using System;
+using System.Collections;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 #endregion
 
@@ -33,5 +36,20 @@ namespace twinkocat.Core.Utilities
         public static bool HaveComponent<T>(this GameObject gameObject) => gameObject.TryGetComponent<T>(out _);
         
         public static bool IsDestroyed(this Object target) => !ReferenceEquals(target, null) && target == null;
+
+        public static Coroutine PlayWithPossibleNullEndCallback(this AudioSource audioSource, Action callback)
+        {
+            audioSource.Play();
+
+            return callback != null && Coroutines.IsInitialized 
+                    ? Coroutines.StartCoroutine(CallbackRoutine(audioSource.clip.length, callback)) 
+                    : null;
+        }
+
+        private static IEnumerator CallbackRoutine(float time, Action callback)
+        {
+            yield return new WaitForSeconds(time);
+            callback.SafeInvoke();
+        }
     }
 }

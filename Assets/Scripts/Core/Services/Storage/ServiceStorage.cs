@@ -32,6 +32,13 @@ namespace twinkocat.Core.Services.Storage
             return default(T);
         }
 
+        public bool TryGet<T>(out T service) where T : IService
+        {
+            service = Get<T>();
+            
+            return service != null;
+        }
+
         public override void Add(IService service) => _entries.Add(service);
 
         public bool Remove(IService item) => _entries.Remove(item);

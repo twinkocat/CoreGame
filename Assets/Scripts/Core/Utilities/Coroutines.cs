@@ -8,9 +8,9 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-namespace twinkocat.Utilities
+namespace twinkocat.Core.Utilities
 {
-    public class Coroutines
+    public static class Coroutines
     {
         private static MonoBehaviour    _coroutineRunner;
 

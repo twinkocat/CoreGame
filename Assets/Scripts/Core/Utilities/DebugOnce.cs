@@ -15,6 +15,7 @@ namespace twinkocat.Core.Utilities
     {
         private static readonly HashSet<string> _logOnce = new();
         private static readonly HashSet<string> _logWarningOnce = new();
+        private static readonly HashSet<string> _logErrorOnce = new();
         
         public static void Log(string message)
         {
@@ -28,6 +29,13 @@ namespace twinkocat.Core.Utilities
             if (!_logWarningOnce.Add(message)) return;
             
             Debug.LogWarning(message);
+        }
+
+        public static void LogError(string message)
+        {
+            if (!_logErrorOnce.Add(message)) return;
+            
+            Debug.LogError(message);
         }
     }
 }

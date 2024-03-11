@@ -46,12 +46,20 @@ namespace twinkocat.Core.Services
                 service.OnSetup();
         }
 
-        public T Get<T>() where T : IService
-        {
-            foreach (var serviceStorage in _serviceStorages.Values)
-                return serviceStorage.Get<T>();
+        public T Get<T>() where T : IService => TryGet<T>(out var service) ? service : default(T);
 
-            return default(T);
+        public bool TryGet<T>(out T service) where T : IService
+        {
+            service = default;
+            
+            foreach (var serviceStorage in _serviceStorages.Values)
+            {
+                if (!serviceStorage.TryGet(out service)) continue;
+
+                return true;
+            }
+
+            return false;
         }
 
         public void RegisterService<T>(IBootstrapper scope) where T : IService, new()
