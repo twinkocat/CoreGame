@@ -16,5 +16,11 @@ namespace twinkocat.Storages.Editor
         {
             StorageCreatorHelper.TargetStorage<SceneGroupStorage>(ConstPath.SceneGroupStoragePath);
         }
+        
+        [MenuItem("twinkocat/storage/music_storage")]
+        public static void MusicStorage()
+        {
+            StorageCreatorHelper.TargetStorage<MusicStorage>(ConstPath.MusicStoragePath);
+        }
     }
 }

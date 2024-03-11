@@ -6,10 +6,6 @@ namespace twinkocat.Gameplay.GameStates
 {
     public class ExitState : IGameState
     {
-        public void Start()
-        {
-        }
-
         public void Do()
         {
         }

@@ -2,10 +2,19 @@
 // 
 // (c) 2024 twinkocat. All rights reserved.
 
+using AYellowpaper.SerializedCollections;
+using UnityEngine;
+
 namespace twinkocat.Storages
 {
-    public class MusicStorage
+    public enum Music
     {
-        
+        MainMenuTheme,
+    }
+    
+    public class MusicStorage : ScriptableObject
+    {
+        [SerializedDictionary("Music", "Clip")]
+        public SerializedDictionary<Music, AudioClip> musicData;
     }
 }

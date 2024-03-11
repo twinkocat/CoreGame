@@ -18,6 +18,7 @@ namespace twinkocat.Gameplay.Global
         {
             serviceRegister.RegisterService<ApplicationLoadService>(this);
             serviceRegister.RegisterService<PauseService>(this);
+            serviceRegister.RegisterService<MusicService>(this);
         }
     }
 }

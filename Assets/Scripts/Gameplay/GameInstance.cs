@@ -21,7 +21,6 @@ namespace twinkocat.Gameplay
         {
             CurrentState?.Exit();
             CurrentState = newState;
-            CurrentState.Start();
             CurrentState.Do();
         }
 
