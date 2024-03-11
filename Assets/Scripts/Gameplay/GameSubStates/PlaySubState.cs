@@ -2,15 +2,20 @@
 // 
 // (c) 2024 twinkocat. All rights reserved.
 
-using UnityEngine;
+using twinkocat.Core.Services;
+using twinkocat.Gameplay.Global.Services;
 
 namespace twinkocat.Gameplay.GameSubStates
 {
     public class PlaySubState : IGameSubState
     {
+        private readonly PauseService _pauseService = ServiceLocator.Interface.Get<PauseService>();
+
         public void DoSubState()
         {
-            Debug.Log("play");
+            if (!_pauseService.IsPaused) return;
+
+            _pauseService.SetPause(false);
         }
     }
 }

@@ -17,6 +17,7 @@ namespace twinkocat.Gameplay.Global
         public override void RegisterServices(IServiceRegister serviceRegister)
         {
             serviceRegister.RegisterService<ApplicationLoadService>(this);
+            serviceRegister.RegisterService<PauseService>(this);
         }
     }
 }
