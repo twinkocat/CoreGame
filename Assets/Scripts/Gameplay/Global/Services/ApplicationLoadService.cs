@@ -26,6 +26,6 @@ namespace twinkocat.Gameplay.Global.Services
             ServiceLocator.GetInstance().UnRegisterService<ApplicationLoadService>();
         }
 
-        public void Dispose() => ApplicationEvents.OnApplicationLoad += OnApplicationLoad;
+        public void Dispose() => ApplicationEvents.OnApplicationLoad -= OnApplicationLoad;
     }
 }

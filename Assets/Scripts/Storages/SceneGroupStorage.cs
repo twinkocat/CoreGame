@@ -10,7 +10,6 @@ using UnityEngine;
 
 namespace twinkocat.Storages
 {
-
     public class SceneGroupStorage : ScriptableObject
     {
         [SerializedDictionary("GroupType", "Scene")]

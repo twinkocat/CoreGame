@@ -11,7 +11,6 @@ using twinkocat.Core.Bootstrap.Interfaces;
 using twinkocat.Core.Scenes;
 using twinkocat.Core.Services;
 using twinkocat.Core.Utilities;
-using twinkocat.Storages;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -24,8 +23,6 @@ namespace twinkocat.Core
         [SerializeField] private bool _debugMode;
         [SerializeField] private bool _logEnabled;
         [SerializeField] private BootstrapperStorage _bootstrapperStorage;
-
-        [SerializeField] private SceneGroupStorage _sceneGroupStorage;
         
         private readonly ServiceLocator _serviceLocator = ServiceLocator.GetInstance();
         private readonly Dictionary<Scene, IBootstrapper> _activeBootstrapper = new();

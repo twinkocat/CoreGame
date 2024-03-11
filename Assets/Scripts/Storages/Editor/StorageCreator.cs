@@ -9,7 +9,7 @@ using UnityEngine;
 
 namespace twinkocat.Storages.Editor
 {
-    public  class StorageCreator : ScriptableObject
+    public class StorageCreator : ScriptableObject
     {
         [MenuItem("twinkocat/storage/scene_group_storage")]
         public static void SceneGroupStorage()
