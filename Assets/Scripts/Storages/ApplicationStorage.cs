@@ -3,7 +3,6 @@
 // (c) 2024 twinkocat. All rights reserved.
 
 using System.Collections.Generic;
-using twinkocat.Core.Enums;
 using twinkocat.Core.Scenes;
 using twinkocat.Core.Utilities;
 using UnityEngine;

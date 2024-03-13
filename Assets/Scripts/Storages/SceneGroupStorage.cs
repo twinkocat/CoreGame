@@ -4,7 +4,6 @@
 
 using System.Collections.Generic;
 using AYellowpaper.SerializedCollections;
-using twinkocat.Core.Enums;
 using twinkocat.Core.Scenes;
 using UnityEngine;
 

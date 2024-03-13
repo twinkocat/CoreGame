@@ -5,7 +5,7 @@
 #region
 
 using System.Threading.Tasks;
-using twinkocat.Core.Enums;
+using twinkocat.Core.Scenes;
 
 #endregion
 

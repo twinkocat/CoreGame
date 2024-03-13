@@ -2,7 +2,7 @@
 // 
 // (c) 2024 twinkocat. All rights reserved.
 
-namespace twinkocat.Core.Enums
+namespace twinkocat.Core.Scenes
 {
     public enum SceneType
     {
