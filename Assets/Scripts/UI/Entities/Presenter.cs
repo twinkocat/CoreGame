@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace twinkocat.UI.Entities
 {
+    
     public abstract class Presenter<TView> : IPresenter where TView : View
     {
         private   TView _viewPrefab;
@@ -10,7 +11,7 @@ namespace twinkocat.UI.Entities
 
         public bool TryInjectViewComponent(View viewPrefab)
         {
-            if (viewPrefab is not TView tViewPrefab) return false;
+            if (_viewPrefab is not null || viewPrefab is not TView tViewPrefab) return false;
 
             _viewPrefab = tViewPrefab;
             return true;

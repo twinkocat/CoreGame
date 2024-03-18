@@ -2,23 +2,19 @@
 // 
 // (c) 2024 twinkocat. All rights reserved.
 
+using System.Collections;
+using System.Collections.Generic;
+using twinkocat.UI.Entities;
 using UnityEngine;
 
 namespace twinkocat.UI
-{
-    public enum WindowType
+{ 
+    public class UIStorage : ScriptableObject, IEnumerable<View>
     {
-        Settings,
-    }
-    
-    public enum UIType
-    {
-        Window,
-        HUD,
-    }
-    
-    public class UIStorage : ScriptableObject
-    {
+        [SerializeField] private List<View> _views;
         
+        
+        public IEnumerator<View> GetEnumerator() => _views.GetEnumerator();
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
     }
 }
