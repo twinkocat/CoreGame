@@ -9,6 +9,7 @@ namespace twinkocat.Core.Pool.Interfaces
     public interface IObjectPool<T> where T : Component
     {
         int PoolCount { get; }
+        T PeekObject();
         T PopObject(Transform parent = null);
         void ReturnObject(T obj);
         void ReleaseAllObjects();

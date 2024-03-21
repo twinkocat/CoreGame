@@ -74,6 +74,8 @@ namespace twinkocat.Core.Pool
             return obj;
         }
 
+        public T PeekObject() => _objectStack.TryPeek(out var obj) ? obj : default; 
+
         /// <summary>
         /// Pop object from pool.
         /// </summary>
@@ -120,15 +122,7 @@ namespace twinkocat.Core.Pool
         public void ReleaseAllObjects()
         {
             foreach (var obj in _activeObjects)
-            {
-                obj.gameObject.SetActive(false);
-                obj.transform.SetParent(_poolHolder);
-
-                _objectStack.Push(obj);
-
-                if (obj is IReturnToPool iPopFromPool)
-                    iPopFromPool.OnReturn();
-            }
+                ReturnObject(obj);
 
             _activeObjects.Clear();
         }
