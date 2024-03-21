@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using twinkocat.Core.Utilities;
 using twinkocat.UI.Interfaces;
 
-namespace twinkocat.UI.Managers
+namespace twinkocat.Gameplay.UI
 {
     public enum HUDType
     {
@@ -17,6 +17,8 @@ namespace twinkocat.UI.Managers
     {
         private List<IHUDPresenter> _hudPresenters = new();
         private bool _isInitialized;
+
+        public bool IsOpen(HUDType uiType) => throw new System.NotImplementedException();
         
         public void Initialize(List<IPresenter> presenters)
         {

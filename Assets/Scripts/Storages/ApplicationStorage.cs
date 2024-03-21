@@ -15,8 +15,9 @@ namespace twinkocat.Storages
         [SerializeField] private MusicStorage      _musicStorage;
         
         public SceneGroupStorage SceneGroupStorage => _sceneGroupStorage;
-        public MusicStorage MusicStorage => _musicStorage;
-        
+        public MusicStorage      MusicStorage      => _musicStorage;
+
+        private void Awake() => this.DontDestroyOnLoad();
     }
 
     public static class StorageGetter
