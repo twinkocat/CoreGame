@@ -26,16 +26,20 @@ namespace twinkocat.Core.Pool
 
             var peekComponent = _objectPool.PeekObject();
 
-            if (peekComponent == null) return false;
-            if (!peekComponent.TryGetComponent<T>(out var tComponent)) return false;
-
+            if (!isExpandable && peekComponent == null) return false;
+            if (!isExpandable && !peekComponent.TryGetComponent<T>(out _)) return false;
+            
+            
             popComponent = _objectPool.PopObject(parent).GetComponent<T>();
 
             return true;
         }
 
-        public void ReturnComponent<T>(T returnComponent) where T : Component => _objectPool.ReturnObject(returnComponent);
-        public void ReleaseAllComponents() => _objectPool.ReleaseAllObjects();
+        public void ReturnComponent<T>(T returnComponent) where T : Component 
+            => _objectPool.ReturnObject(returnComponent);
         
+        public void ReleaseAllComponents() => _objectPool.ReleaseAllObjects();
+        public void DestroyComponentPool() => _objectPool.DestroyPool();
+
     }
 }
