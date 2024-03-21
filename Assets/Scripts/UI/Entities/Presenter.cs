@@ -18,5 +18,14 @@ namespace twinkocat.UI.Entities
         }
         
         public void SpawnView() => View = Object.Instantiate(_viewPrefab);
+
+        public virtual void Open()
+        {
+            if (View == null) SpawnView();
+            
+            View.gameObject.SetActive(true);
+        }
+
+        public virtual void Close() => View.gameObject.SetActive(false);
     }
 }
