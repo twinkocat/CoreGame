@@ -20,6 +20,11 @@ namespace twinkocat.Gameplay.GameStates
             DoEnd();
         }
 
+
+        public void Exit()
+        {
+        }
+
         private async Task DoStart()
         {
             if (!StorageGetter.TryGetSceneGroupFromStorage(SceneGroup.Menu, out var sceneDataList))
@@ -29,18 +34,12 @@ namespace twinkocat.Gameplay.GameStates
             }
 
             await MultipleSceneLoader.LoadScenes(sceneDataList);
-            
+
             if (ServiceLocator.Interface.TryGet<MusicService>(out var musicService))
                 musicService.PlayMusic(Music.MainMenuTheme, true);
         }
 
         private void DoEnd()
-        {
-            
-        }
-
-
-        public void Exit()
         {
         }
     }

@@ -16,9 +16,9 @@ namespace twinkocat.Core.Scenes
 {
     public class BootstrapperStorage : ScriptableObject
     {
-        [SerializedDictionary("SceneRef", "Bootstrapper Prefab")] [SerializeField] 
+        [SerializedDictionary("SceneRef", "Bootstrapper Prefab")] [SerializeField]
         private SerializedDictionary<SceneReference, Bootstrapper> scenes;
-        
+
         public IDictionary<SceneReference, Bootstrapper> Scenes => scenes;
     }
 }

@@ -10,8 +10,6 @@ namespace twinkocat.Gameplay.GameStates
 {
     public class GameState : IGameState
     {
-        public GameState(/* Todo: game types */) { }
-        
         public async void Do()
         {
             if (!StorageGetter.TryGetSceneGroupFromStorage(SceneGroup.Game, out var sceneDataList))

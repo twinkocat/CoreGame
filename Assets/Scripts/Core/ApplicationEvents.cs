@@ -13,8 +13,8 @@ namespace twinkocat.Core
 {
     public static class ApplicationEvents
     {
-        public static Action<float>          OnLoadingInProgress;
-        public static Action<IBootstrapper>  OnBootstrapperLoad;
-        public static Action                 OnApplicationLoad;
+        public static Action<float> OnLoadingInProgress;
+        public static Action<IBootstrapper> OnBootstrapperLoad;
+        public static Action OnApplicationLoad;
     }
 }

@@ -3,7 +3,7 @@
     public interface ICreateInPool
     {
         /// <summary>
-        /// Invokes when object is created.
+        ///     Invokes when object is created.
         /// </summary>
         void OnCreate();
     }

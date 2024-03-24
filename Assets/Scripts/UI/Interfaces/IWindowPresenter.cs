@@ -8,8 +8,8 @@ namespace twinkocat.UI.Interfaces
 {
     public interface IWindowPresenter : IPresenter
     {
-        WindowType   WindowType  { get; }
-        bool         IsStackable { get; }
+        WindowType WindowType { get; }
+        bool IsStackable { get; }
 
         void OpenWindow();
         void CloseWindow();

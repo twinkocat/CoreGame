@@ -13,6 +13,5 @@ namespace twinkocat.Core.Utilities
 #else
         public static readonly bool IsEditor = false;
 #endif
-        
     }
 }

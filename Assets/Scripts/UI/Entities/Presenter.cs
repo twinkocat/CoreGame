@@ -3,10 +3,9 @@ using UnityEngine;
 
 namespace twinkocat.UI.Entities
 {
-    
     public abstract class Presenter<TView> : IPresenter where TView : View
     {
-        private   TView _viewPrefab;
+        private TView _viewPrefab;
         protected TView View;
 
         public bool TryInjectViewComponent(View viewPrefab)
@@ -16,16 +15,22 @@ namespace twinkocat.UI.Entities
             _viewPrefab = tViewPrefab;
             return true;
         }
-        
-        public void SpawnView() => View = Object.Instantiate(_viewPrefab);
+
+        public void SpawnView()
+        {
+            View = Object.Instantiate(_viewPrefab);
+        }
 
         public virtual void Open()
         {
             if (View == null) SpawnView();
-            
+
             View.gameObject.SetActive(true);
         }
 
-        public virtual void Close() => View.gameObject.SetActive(false);
+        public virtual void Close()
+        {
+            View.gameObject.SetActive(false);
+        }
     }
 }

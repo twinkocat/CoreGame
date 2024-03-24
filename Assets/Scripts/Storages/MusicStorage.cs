@@ -9,9 +9,9 @@ namespace twinkocat.Storages
 {
     public enum Music
     {
-        MainMenuTheme,
+        MainMenuTheme
     }
-    
+
     public class MusicStorage : ScriptableObject
     {
         [SerializedDictionary("Music", "Clip")]

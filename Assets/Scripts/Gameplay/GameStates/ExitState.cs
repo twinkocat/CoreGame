@@ -5,6 +5,7 @@
 using twinkocat.Core.Scenes;
 using twinkocat.Core.Utilities;
 using twinkocat.Storages;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -22,12 +23,12 @@ namespace twinkocat.Gameplay.GameStates
 
             await MultipleSceneLoader.LoadScenes(sceneDataList);
             await SceneManager.UnloadSceneAsync("Bootstrap");
-            
+
 #if UNITY_EDITOR
-            UnityEditor.EditorApplication.isPlaying = false;
+            EditorApplication.isPlaying = false;
 #else
             Application.Quit();
-#endif    
+#endif
         }
 
         public void Exit()

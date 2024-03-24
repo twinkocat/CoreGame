@@ -8,7 +8,14 @@ namespace twinkocat.Core.Scenes
     {
         private static AsyncOperationHandleGroup _handleGroup;
 
-        public static AsyncOperationHandleGroup CreateHandleGroup(int capacity) => _handleGroup = new AsyncOperationHandleGroup(capacity);
-        public static AsyncOperationHandleGroup GetCurrentGroup() => _handleGroup;
+        public static AsyncOperationHandleGroup CreateHandleGroup(int capacity)
+        {
+            return _handleGroup = new AsyncOperationHandleGroup(capacity);
+        }
+
+        public static AsyncOperationHandleGroup GetCurrentGroup()
+        {
+            return _handleGroup;
+        }
     }
 }

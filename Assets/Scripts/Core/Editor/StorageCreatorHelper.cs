@@ -38,9 +38,9 @@ namespace twinkocat.Core.Editor
 
             var directoryPath = Path.GetDirectoryName(assetPath);
 
-            if (string.IsNullOrEmpty(directoryPath))    return false;
+            if (string.IsNullOrEmpty(directoryPath)) return false;
 
-            if (!directoryPath.Contains("Assets"))      throw new ArgumentException("Path must contain [Assets] folder!");
+            if (!directoryPath.Contains("Assets")) throw new ArgumentException("Path must contain [Assets] folder!");
 
             outPath = directoryPath;
 

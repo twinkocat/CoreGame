@@ -14,14 +14,20 @@ namespace twinkocat.Core.Scenes
 {
     public readonly struct AsyncOperationGroup
     {
-        public bool  IsDone   => _operations.All(operation => operation.isDone);
-        public float Progress => _operations.Average(operation => operation.progress); 
-        
-        
+        public bool IsDone => _operations.All(operation => operation.isDone);
+        public float Progress => _operations.Average(operation => operation.progress);
+
+
         private readonly List<AsyncOperation> _operations;
 
-        public AsyncOperationGroup(int capacity) => _operations = new List<AsyncOperation>(capacity);
+        public AsyncOperationGroup(int capacity)
+        {
+            _operations = new List<AsyncOperation>(capacity);
+        }
 
-        public void Add(AsyncOperation asyncOperation) => _operations.Add(asyncOperation);
+        public void Add(AsyncOperation asyncOperation)
+        {
+            _operations.Add(asyncOperation);
+        }
     }
 }

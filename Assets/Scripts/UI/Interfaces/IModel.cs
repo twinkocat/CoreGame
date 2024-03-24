@@ -1,4 +1,6 @@
 ﻿namespace twinkocat.UI.Interfaces
 {
-    public interface IModel { }
+    public interface IModel
+    {
+    }
 }

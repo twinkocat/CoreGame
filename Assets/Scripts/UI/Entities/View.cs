@@ -6,5 +6,7 @@ using UnityEngine;
 
 namespace twinkocat.UI.Entities
 {
-    public abstract class View : MonoBehaviour { }
+    public abstract class View : MonoBehaviour
+    {
+    }
 }

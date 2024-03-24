@@ -8,6 +8,6 @@ namespace twinkocat.Core.Scenes
     {
         ActiveScene,
         UI,
-        HUD,
+        HUD
     }
 }

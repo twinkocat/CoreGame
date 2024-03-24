@@ -14,16 +14,32 @@ namespace twinkocat.Core.Scenes
     {
         private readonly List<AsyncOperationHandle<SceneInstance>> _handles;
 
-        public float Progress  => _handles.Count == 0 ? 0 : _handles.Average(operation => operation.PercentComplete);
-        public bool  IsDone     => _handles.Count == 0 || _handles.All(operation => operation.IsDone);
-        
-        public AsyncOperationHandleGroup(int capacity) => _handles = new List<AsyncOperationHandle<SceneInstance>>(capacity);
-        
-        public void Add(AsyncOperationHandle<SceneInstance> operationHandle) => _handles.Add(operationHandle);
-        public void SafeClear() => _handles?.Clear();
-        
-        public IEnumerator<AsyncOperationHandle<SceneInstance>> GetEnumerator() => _handles?.GetEnumerator() ?? Enumerable.Empty<AsyncOperationHandle<SceneInstance>>().GetEnumerator();
+        public float Progress => _handles.Count == 0 ? 0 : _handles.Average(operation => operation.PercentComplete);
+        public bool IsDone => _handles.Count == 0 || _handles.All(operation => operation.IsDone);
 
-        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+        public AsyncOperationHandleGroup(int capacity)
+        {
+            _handles = new List<AsyncOperationHandle<SceneInstance>>(capacity);
+        }
+
+        public void Add(AsyncOperationHandle<SceneInstance> operationHandle)
+        {
+            _handles.Add(operationHandle);
+        }
+
+        public void SafeClear()
+        {
+            _handles?.Clear();
+        }
+
+        public IEnumerator<AsyncOperationHandle<SceneInstance>> GetEnumerator()
+        {
+            return _handles?.GetEnumerator() ?? Enumerable.Empty<AsyncOperationHandle<SceneInstance>>().GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
     }
 }

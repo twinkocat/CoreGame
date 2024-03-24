@@ -15,10 +15,8 @@ namespace twinkocat.Gameplay.UI
         public static IEnumerable<T> InitViews<T>(IReadOnlyCollection<T> collection) where T : IPresenter
         {
             foreach (var presenter in collection)
-            {
                 if (!StorageGetter.GetUIStorage().Any(presenter.TryInjectViewComponent))
                     Debug.Log($"View for {presenter.GetType()} not found");
-            }
 
             return collection;
         }

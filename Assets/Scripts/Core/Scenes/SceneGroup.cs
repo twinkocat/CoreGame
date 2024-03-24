@@ -9,6 +9,6 @@ namespace twinkocat.Core.Scenes
         Menu,
         Game,
         AddressableTest,
-        Exit,
+        Exit
     }
 }

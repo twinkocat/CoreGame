@@ -14,7 +14,7 @@ namespace twinkocat.Gameplay.GameSubStates
         public void DoSubState()
         {
             if (_pauseService.IsPaused) return;
-            
+
             _pauseService.SetPause(true);
         }
     }

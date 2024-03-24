@@ -8,6 +8,5 @@ namespace twinkocat.Gameplay.UI.Settings
 {
     public class SettingsView : View
     {
-        
     }
 }

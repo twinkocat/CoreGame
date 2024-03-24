@@ -11,14 +11,11 @@ namespace twinkocat.Gameplay.Global.Services
     {
         void SetPause(bool isPaused);
     }
-    
+
     public class PauseService : IService, IPauseHandler
     {
-        public bool     IsPaused { get; private set; }
-        
         private readonly HashSet<IPauseHandler> _pauseHandlers = new();
-        
-        public void OnSetup() { }
+        public bool IsPaused { get; private set; }
 
         public void SetPause(bool isPaused)
         {
@@ -27,10 +24,24 @@ namespace twinkocat.Gameplay.Global.Services
             foreach (var pauseHandler in _pauseHandlers)
                 pauseHandler.SetPause(isPaused);
         }
-        
-        public void Register  (IPauseHandler pauseHandler) => _pauseHandlers.Add(pauseHandler);
-        public void UnRegister(IPauseHandler pauseHandler) => _pauseHandlers.Remove(pauseHandler);
 
-        public void Dispose() => _pauseHandlers.Clear();
+        public void OnSetup()
+        {
+        }
+
+        public void Dispose()
+        {
+            _pauseHandlers.Clear();
+        }
+
+        public void Register(IPauseHandler pauseHandler)
+        {
+            _pauseHandlers.Add(pauseHandler);
+        }
+
+        public void UnRegister(IPauseHandler pauseHandler)
+        {
+            _pauseHandlers.Remove(pauseHandler);
+        }
     }
 }

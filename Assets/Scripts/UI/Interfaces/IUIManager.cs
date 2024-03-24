@@ -4,7 +4,6 @@
 
 using System;
 
-
 namespace twinkocat.UI.Interfaces
 {
     public interface IUIManager<T, in TEnum> where TEnum : Enum

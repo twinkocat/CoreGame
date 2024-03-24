@@ -15,7 +15,7 @@ namespace twinkocat.Core.Scenes
     public class SceneData
     {
         public SceneReference reference;
-        public SceneType      sceneType;
-        public string         Name => reference.Name;
+        public SceneType sceneType;
+        public string Name => reference.Name;
     }
 }

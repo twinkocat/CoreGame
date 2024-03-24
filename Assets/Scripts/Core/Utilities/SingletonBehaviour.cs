@@ -5,8 +5,8 @@ namespace twinkocat.Core.Utilities
     [DisallowMultipleComponent]
     public abstract class SingletonBehaviour<T> : MonoBehaviour where T : SingletonBehaviour<T>
     {
-        private static T         _instance;
-        private static object     _lock = new object();
+        private static T _instance;
+        private static readonly object _lock = new();
 
         public static T Instance
         {
@@ -15,7 +15,7 @@ namespace twinkocat.Core.Utilities
                 lock (_lock)
                 {
                     if (_instance) return _instance;
-                    
+
                     return _instance ??= RemoveAndKeepOneInstance() ?? UnityExtensions.SpawnComponent<T>();
                 }
             }
@@ -28,7 +28,7 @@ namespace twinkocat.Core.Utilities
             var objectsOfType = FindObjectsOfType<T>();
 #pragma warning restore CS0618 // Type or member is obsolete
 
-            if (objectsOfType.IsNullOrEmpty()) 
+            if (objectsOfType.IsNullOrEmpty())
                 return null;
 
             for (var index = 1; index < objectsOfType.Length; index++)

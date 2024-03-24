@@ -16,16 +16,22 @@ namespace twinkocat.Gameplay.Global.Services
 {
     public class ApplicationLoadService : IService
     {
-        public void OnSetup() => ApplicationEvents.OnApplicationLoad += OnApplicationLoad;
+        public void OnSetup()
+        {
+            ApplicationEvents.OnApplicationLoad += OnApplicationLoad;
+        }
+
+        public void Dispose()
+        {
+            ApplicationEvents.OnApplicationLoad -= OnApplicationLoad;
+        }
 
         private void OnApplicationLoad()
         {
             GameInstance.Instance.SetState(new MenuState());
             GameInstance.Instance.SetSubState(new PlaySubState());
-            
+
             ServiceLocator.GetInstance().UnRegisterService<ApplicationLoadService>();
         }
-
-        public void Dispose() => ApplicationEvents.OnApplicationLoad -= OnApplicationLoad;
     }
 }

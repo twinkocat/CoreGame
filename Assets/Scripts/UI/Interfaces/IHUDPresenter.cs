@@ -6,6 +6,5 @@ namespace twinkocat.UI.Interfaces
 {
     public interface IHUDPresenter : IPresenter
     {
-        
     }
 }

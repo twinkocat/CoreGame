@@ -7,14 +7,18 @@ using twinkocat.Core.Utilities;
 
 namespace twinkocat.Gameplay
 {
-    public interface IGameState : IState { }
+    public interface IGameState : IState
+    {
+    }
 
-    public interface IGameSubState : ISubState { }
+    public interface IGameSubState : ISubState
+    {
+    }
 
     public class GameInstance : LazySingleton<GameInstance>, IStateMachine<IGameState, IGameSubState>
     {
-        public IGameState     CurrentState     { get; private set; }
-        public IGameSubState  CurrentSubState  { get; private set; }
+        public IGameState CurrentState { get; private set; }
+        public IGameSubState CurrentSubState { get; private set; }
 
 
         public void SetState(IGameState newState)

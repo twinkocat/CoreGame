@@ -22,13 +22,26 @@ namespace twinkocat.Gameplay.Global.Services
             _musicSource.playOnAwake = false;
         }
 
-        public void SetVolume(float volume) => _musicSource.volume = volume;
-        public void SetFade(float duration, float endValue) => _musicSource.DOFade(endValue, duration);
-        
+        public void Dispose()
+        {
+            StopMusic();
+            Object.Destroy(_musicSource.gameObject);
+        }
+
+        public void SetVolume(float volume)
+        {
+            _musicSource.volume = volume;
+        }
+
+        public void SetFade(float duration, float endValue)
+        {
+            _musicSource.DOFade(endValue, duration);
+        }
+
         public void PlayMusic(Music music, bool loop = false)
         {
             if (!StorageGetter.TryGetMusicClipFromStorage(music, out var clip)) return;
-            
+
             _musicSource.loop = loop;
             _musicSource.clip = clip;
             _musicSource.Play();
@@ -42,13 +55,13 @@ namespace twinkocat.Gameplay.Global.Services
             _musicSource.clip = clip;
             _callbackRoutine = _musicSource.PlayWithPossibleNullEndCallback(onMusicEnd);
         }
-        
+
         public void FadeAndStop(float timeToFade)
         {
-            _musicSource.DOFade(0 ,timeToFade)
+            _musicSource.DOFade(0, timeToFade)
                 .OnComplete(StopMusic);
         }
-        
+
         public void StopMusic()
         {
             _musicSource.Stop();
@@ -58,16 +71,10 @@ namespace twinkocat.Gameplay.Global.Services
         private void StopRoutine()
         {
             if (_callbackRoutine is null) return;
-            
+
             Coroutines.StopCoroutine(_callbackRoutine);
-            
+
             _callbackRoutine = null;
-        }
-        
-        public void Dispose()
-        {
-            StopMusic();
-            Object.Destroy(_musicSource.gameObject);
         }
     }
 }

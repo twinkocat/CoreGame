@@ -9,12 +9,18 @@ namespace twinkocat.Gameplay.UI.Settings
 {
     public class SettingsWindow : Presenter<SettingsView>, IWindowPresenter
     {
-        public WindowType WindowType   => WindowType.Settings;
-        public bool       IsStackable  => false;
+        public WindowType WindowType => WindowType.Settings;
+        public bool IsStackable => false;
 
 
-        public void OpenWindow()  => Open();
-        
-        public void CloseWindow() => Close();
+        public void OpenWindow()
+        {
+            Open();
+        }
+
+        public void CloseWindow()
+        {
+            Close();
+        }
     }
 }

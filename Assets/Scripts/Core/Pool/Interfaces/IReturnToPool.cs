@@ -3,7 +3,7 @@
     public interface IReturnToPool
     {
         /// <summary>
-        /// Invokes when object is return to pool.
+        ///     Invokes when object is return to pool.
         /// </summary>
         void OnReturn();
     }

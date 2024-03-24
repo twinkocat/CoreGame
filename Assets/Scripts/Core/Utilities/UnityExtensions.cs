@@ -21,29 +21,46 @@ namespace twinkocat.Core.Utilities
             return obj;
         }
 
-        public static T SpawnComponent<T>(string name) where T : Component => new GameObject(name, typeof(T)).GetComponent<T>();
-        public static T SpawnComponent<T>() where T : Component => SpawnComponent<T>(typeof(T).Name);
-        
-        public static T LoadAndInstantiate<T>(string path, Vector3 position, Quaternion quaternion, Transform parent = null)
+        public static T SpawnComponent<T>(string name) where T : Component
+        {
+            return new GameObject(name, typeof(T)).GetComponent<T>();
+        }
+
+        public static T SpawnComponent<T>() where T : Component
+        {
+            return SpawnComponent<T>(typeof(T).Name);
+        }
+
+        public static T LoadAndInstantiate<T>(string path, Vector3 position, Quaternion quaternion,
+            Transform parent = null)
             where T : Object
         {
             var item = Resources.Load<T>(path);
             return Object.Instantiate(item, position, quaternion, parent);
         }
 
-        public static T LoadAndInstantiate<T>(string path) where T : Object => LoadAndInstantiate<T>(path, Vector3.zero, Quaternion.identity);
+        public static T LoadAndInstantiate<T>(string path) where T : Object
+        {
+            return LoadAndInstantiate<T>(path, Vector3.zero, Quaternion.identity);
+        }
 
-        public static bool HaveComponent<T>(this GameObject gameObject) => gameObject.TryGetComponent<T>(out _);
-        
-        public static bool IsDestroyed(this Object target) => !ReferenceEquals(target, null) && target == null;
+        public static bool HaveComponent<T>(this GameObject gameObject)
+        {
+            return gameObject.TryGetComponent<T>(out _);
+        }
+
+        public static bool IsDestroyed(this Object target)
+        {
+            return !ReferenceEquals(target, null) && target == null;
+        }
 
         public static Coroutine PlayWithPossibleNullEndCallback(this AudioSource audioSource, Action callback)
         {
             audioSource.Play();
 
-            return callback != null && Coroutines.IsInitialized 
-                    ? Coroutines.StartCoroutine(CallbackRoutine(audioSource.clip.length, callback)) 
-                    : null;
+            return callback != null && Coroutines.IsInitialized
+                ? Coroutines.StartCoroutine(CallbackRoutine(audioSource.clip.length, callback))
+                : null;
         }
 
         private static IEnumerator CallbackRoutine(float time, Action callback)

@@ -3,7 +3,7 @@
     public interface IPopFromPool
     {
         /// <summary>
-        /// Invokes when object is popped from pool.
+        ///     Invokes when object is popped from pool.
         /// </summary>
         void OnPop();
     }
