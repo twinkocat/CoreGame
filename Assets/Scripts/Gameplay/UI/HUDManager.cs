@@ -15,24 +15,13 @@ namespace twinkocat.Gameplay.UI
     
     public class HUDManager : LazySingleton<HUDManager>, IUIManager<IHUDPresenter, HUDType>
     {
-        private List<IHUDPresenter> _hudPresenters = new();
-        private bool _isInitialized;
-
-        public bool IsOpen(HUDType uiType) => throw new System.NotImplementedException();
-        
-        public void Initialize(List<IPresenter> presenters)
-        {
-            if (_isInitialized || presenters.IsNullOrEmpty()) return;
-            
-            foreach (var presenter in presenters)
+        private IEnumerable<IHUDPresenter> _hudPresenters = UIHelper.InitViews(
+            new List<IHUDPresenter>
             {
-                if (presenter is not IHUDPresenter windowPresenter) continue;
                 
-                _hudPresenters.Add(windowPresenter);
-            }
-
-            _isInitialized = true;
-        }
+            });
+        
+        public bool IsOpen(HUDType uiType) => throw new System.NotImplementedException();
 
         public void Open(HUDType uiType)
         {

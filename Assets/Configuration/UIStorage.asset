@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7cbacce29704f7b95854aa280344e00, type: 3}
   m_Name: UIStorage
   m_EditorClassIdentifier: 
-  _views: []
+  _views:
+  - {fileID: 8390044458743225868, guid: 574000171b99f0246b7d45dfaf97e375, type: 3}

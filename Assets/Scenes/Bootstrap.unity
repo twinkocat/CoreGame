@@ -289,6 +289,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sceneGroupStorage: {fileID: 11400000, guid: 9a13dd0feaaf10846928801cd79eac21, type: 2}
   _musicStorage: {fileID: 11400000, guid: 61ef52725cab035419688cd83d825f56, type: 2}
+  _uiStorage: {fileID: 11400000, guid: d2536ed37c1d4b34084892f967e23b41, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

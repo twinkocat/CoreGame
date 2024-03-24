@@ -17,33 +17,34 @@ namespace twinkocat.Gameplay.UI
     
     public class WindowManager : LazySingleton<WindowManager>, IUIManager<IWindowPresenter, WindowType>
     {
-        private readonly List<IWindowPresenter>  _windowPresenters = new()
-        {
-            new SettingsPresenter(),
-        };
+        private readonly IEnumerable<IWindowPresenter> _windowPresenters = UIHelper.InitViews(
+            new List<IWindowPresenter>
+            {
+                new SettingsWindow(),
+                
+            });
         
         private readonly List<IWindowPresenter>  _activePresenters = new();
         private readonly Stack<IWindowPresenter> _windowStack      = new();
         
-        private bool _isInitialized;
-        
-        public bool IsOpen(WindowType uiType) => _activePresenters.Any(x => x.WindowType == uiType);
+        public bool IsOpen(WindowType uiType) => _activePresenters.Any(window => window.WindowType == uiType);
 
         public void Open(WindowType uiType)
         {
-            var window = _windowPresenters.FirstOrDefault(x => x.WindowType == uiType);
+            var window = _windowPresenters.FirstOrDefault(window => window.WindowType == uiType);
             
             if (window == null) return;
-
+            
             window.OpenWindow();
+            
             _windowStack.Push(window);
             _activePresenters.Add(window);
         }
 
+        
         public void Close(WindowType uiType)
         {
-            if (!_activePresenters.TryFind(x => x.WindowType == uiType, out var activeWindow)) return;
-            
+            if (!_activePresenters.TryFind(window => window.WindowType == uiType, out _)) return;
         }
     }
 }

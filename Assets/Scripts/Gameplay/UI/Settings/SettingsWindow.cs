@@ -7,12 +7,13 @@ using twinkocat.UI.Interfaces;
 
 namespace twinkocat.Gameplay.UI.Settings
 {
-    public class SettingsPresenter : Presenter<SettingsView>, IWindowPresenter
+    public class SettingsWindow : Presenter<SettingsView>, IWindowPresenter
     {
-        public WindowType WindowType => WindowType.Settings;
+        public WindowType WindowType   => WindowType.Settings;
+        public bool       IsStackable  => false;
 
-        
-        public void OpenWindow() => Open();
+
+        public void OpenWindow()  => Open();
         
         public void CloseWindow() => Close();
     }

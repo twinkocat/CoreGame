@@ -13,10 +13,12 @@ namespace twinkocat.Storages
     {
         [SerializeField] private SceneGroupStorage _sceneGroupStorage;
         [SerializeField] private MusicStorage      _musicStorage;
+        [SerializeField] private UIStorage         _uiStorage;
         
         public SceneGroupStorage SceneGroupStorage => _sceneGroupStorage;
         public MusicStorage      MusicStorage      => _musicStorage;
-
+        public UIStorage         UIStorage         => _uiStorage;
+        
         private void Awake() => this.DontDestroyOnLoad();
     }
 
@@ -27,5 +29,8 @@ namespace twinkocat.Storages
 
         public static bool TryGetSceneGroupFromStorage(SceneGroup group, out List<SceneData> sceneData)
             => ApplicationStorage.Instance.SceneGroupStorage.sceneGroups.TryGetValue(group, out sceneData);
+
+        public static UIStorage GetUIStorage() 
+            => ApplicationStorage.Instance.UIStorage;
     }
 }
