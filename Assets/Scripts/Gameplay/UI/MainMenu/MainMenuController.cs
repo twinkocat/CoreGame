@@ -24,7 +24,7 @@ namespace twinkocat.Gameplay.UI.MainMenu
 
         private void StartNewGame()
         {
-            GameInstance.Instance.SetState(new GameState( /* new */));
+            GameInstance.Instance.SetState(GameState.CreateGame());
         }
 
         private void OpenSettings()

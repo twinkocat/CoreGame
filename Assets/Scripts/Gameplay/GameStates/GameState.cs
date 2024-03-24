@@ -2,27 +2,24 @@
 // 
 // (c) 2024 twinkocat. All rights reserved.
 
-using twinkocat.Core.Scenes;
-using twinkocat.Core.Utilities;
-using twinkocat.Storages;
-
 namespace twinkocat.Gameplay.GameStates
 {
-    public class GameState : IGameState
+    public abstract class GameState : IGameState
     {
-        public async void Do()
+
+        public static GameState CreateGame(/* static instance factory */)
         {
-            if (!StorageGetter.TryGetSceneGroupFromStorage(SceneGroup.Game, out var sceneDataList))
+            switch (false)
             {
-                DebugOnce.LogError("No have sceneData for Game scene");
-                return;
+                //..
             }
-
-            await MultipleSceneLoader.LoadScenes(sceneDataList);
+            
+            return new DefaultGameState();
         }
 
-        public void Exit()
-        {
-        }
+        public abstract void Do();
+
+
+        public virtual void Exit() { }
     }
 }
