@@ -14,7 +14,6 @@ namespace twinkocat.Gameplay.GameStates
     
     public abstract class GameState : IGameState
     {
-
         public static GameState CreateGame(GameStateType gameStateType)
         {
             return gameStateType switch

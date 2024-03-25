@@ -2,13 +2,15 @@
 // 
 // (c) 2024 twinkocat. All rights reserved.
 
-namespace twinkocat.Core.Scenes
+namespace twinkocat.Gameplay
 {
     public enum SceneGroup
     {
         Menu,
-        Game,
-        AddressableTest,
-        Exit
+        Exit,
+        DefaultGame,
+        CoolGame,
+        
+        AddressableTest = 999999,
     }
 }

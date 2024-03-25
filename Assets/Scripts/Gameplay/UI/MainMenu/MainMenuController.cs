@@ -14,28 +14,16 @@ namespace twinkocat.Gameplay.UI.MainMenu
         {
             _mainMenuView = menuView;
 
-            _mainMenuView.LoadGameButton.interactable = false;
+            _mainMenuView.LoadGameButton.onClick.AddListener(LoadGame);
             _mainMenuView.NewGameButton.onClick.AddListener(StartNewGame);
             _mainMenuView.SettingsButton.onClick.AddListener(OpenSettings);
             _mainMenuView.ExitButton.onClick.AddListener(ExitGame);
         }
 
-        // private void LoadGame() => GameInstance.Instance.SetState(new GameState(/* load */));
-
-        private void StartNewGame()
-        {
-            GameInstance.Instance.SetState(GameState.CreateGame(GameStateType.Default));
-        }
-
-        private void OpenSettings()
-        {
-            WindowManager.Instance.Open(WindowType.Settings);
-        }
-
-        private void ExitGame()
-        {
-            GameInstance.Instance.SetState(new ExitState());
-        }
+        private void LoadGame() => GameInstance.Instance.SetState(GameState.CreateGame(GameStateType.CoolGame));
+        private void StartNewGame() => GameInstance.Instance.SetState(GameState.CreateGame(GameStateType.Default));
+        private void OpenSettings() => WindowManager.Instance.Open(WindowType.Settings);
+        private void ExitGame() => GameInstance.Instance.SetState(new ExitState());
 
         public void Dispose()
         {

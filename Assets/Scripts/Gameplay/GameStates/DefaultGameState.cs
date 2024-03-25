@@ -12,7 +12,7 @@ namespace twinkocat.Gameplay.GameStates
     {
         public override async void Do()
         {
-            if (!StorageGetter.TryGetSceneGroupFromStorage(SceneGroup.Game, out var sceneDataList))
+            if (!StorageGetter.TryGetSceneGroupFromStorage(SceneGroup.DefaultGame, out var sceneDataList))
             {
                 DebugOnce.LogError("No have sceneData for Game scene");
                 return;
