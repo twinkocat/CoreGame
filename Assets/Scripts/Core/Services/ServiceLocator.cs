@@ -48,6 +48,15 @@ namespace twinkocat.Core.Services
             Debug.Log($"Service {typeof(T).Name} Added to {scope.GetType().Name} scope");
         }
 
+        public void RegisterServiceBehaviour<T>(IBootstrapper scope) where T : MonoBehaviour, IService, new()
+        {
+            if (!_serviceStorages.ContainsKey(scope)) return;
+            if (_serviceStorages[scope].Contains<T>()) return;
+            
+            _serviceStorages[scope].AddServiceBehaviour<T>();
+            Debug.Log($"ServiceBehaviour {typeof(T).Name} Added to {scope.GetType().Name} scope");
+        }
+
         public void UnRegisterService<T>() where T : IService
         {
             foreach (var serviceStorage in _serviceStorages.Values)

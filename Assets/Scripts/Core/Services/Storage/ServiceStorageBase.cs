@@ -7,6 +7,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using twinkocat.Core.Services.Interfaces;
+using twinkocat.Core.Utilities;
+using UnityEngine;
 
 #endregion
 
@@ -35,6 +37,11 @@ namespace twinkocat.Core.Services.Storage
         public void Add<T>() where T : IService, new()
         {
             Add(new T());
+        }
+
+        public void AddServiceBehaviour<T>() where T : MonoBehaviour, IService
+        {
+            Add(UnityExtensions.SpawnComponent<T>($"{typeof(T).Name}").DontDestroyOnLoad());
         }
     }
 }

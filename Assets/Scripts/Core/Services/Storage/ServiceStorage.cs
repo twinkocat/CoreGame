@@ -5,7 +5,9 @@
 #region
 
 using System.Collections.Generic;
+using System.Linq;
 using twinkocat.Core.Services.Interfaces;
+using UnityEngine;
 
 #endregion
 
@@ -36,6 +38,7 @@ namespace twinkocat.Core.Services.Storage
 
         public override void Clear()
         {
+            ClearBehaviours();
             _entries.Clear();
         }
 
@@ -94,6 +97,17 @@ namespace twinkocat.Core.Services.Storage
             }
 
             return contains;
+        }
+
+        private void ClearBehaviours()
+        {
+            var serviceBehavioursList = _entries.Where(service => service is MonoBehaviour).ToList();
+
+            foreach (var service in serviceBehavioursList)
+            {
+                Remove(service);
+                Object.Destroy(((MonoBehaviour)service).gameObject);
+            }
         }
     }
 }
