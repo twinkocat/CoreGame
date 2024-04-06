@@ -32,8 +32,8 @@ namespace twinkocat.Core.Sequencer
         public Sequence Repeat(bool repeatable = true) => Repeat_Internal(repeatable);
         
         public void RunSequence()  => StartSequence_Internal();
-        
-        public void StopSequence() => Coroutines.StopCoroutine(_sequenceRoutine);
+
+        public void StopSequence() => StopSequence_Internal();
         
         public void ClearSequence() => _sequenceCommands.Clear();
         
@@ -51,8 +51,16 @@ namespace twinkocat.Core.Sequencer
 
         private Sequence StartSequence_Internal()
         {
-            _sequenceRoutine = Coroutines.StartCoroutine(SequenceRoutine(_isRepeatable));
+            _sequenceRoutine ??= Coroutines.StartCoroutine(SequenceRoutine(_isRepeatable));
             return this;
+        }
+
+        private void StopSequence_Internal()
+        {
+            if (_sequenceRoutine is null) return;
+            
+            Coroutines.StopCoroutine(_sequenceRoutine);
+            _sequenceRoutine = null;
         }
 
         private IEnumerator SequenceRoutine(bool repeatable)
