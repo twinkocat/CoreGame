@@ -23,7 +23,7 @@ MonoBehaviour:
       - reference:
           asset: {fileID: 102900000, guid: fb71afcdc3ad6f24a88d846ff8f784bb, type: 3}
           guid: fb71afcdc3ad6f24a88d846ff8f784bb
-        sceneType: 1
+        sceneType: 2
     - Key: 1
       Value:
       - reference:
@@ -37,27 +37,19 @@ MonoBehaviour:
           guid: fce3f9961d464974f8018745e3fa1a66
         sceneType: 0
       - reference:
+          asset: {fileID: 102900000, guid: fb71afcdc3ad6f24a88d846ff8f784bb, type: 3}
+          guid: fb71afcdc3ad6f24a88d846ff8f784bb
+        sceneType: 2
+      - reference:
           asset: {fileID: 102900000, guid: e29fe50606a07e34f95333f668b8ff69, type: 3}
           guid: e29fe50606a07e34f95333f668b8ff69
         sceneType: 2
-      - reference:
-          asset: {fileID: 102900000, guid: fb71afcdc3ad6f24a88d846ff8f784bb, type: 3}
-          guid: fb71afcdc3ad6f24a88d846ff8f784bb
-        sceneType: 1
     - Key: 3
       Value:
       - reference:
           asset: {fileID: 102900000, guid: 369af3e504864f342bb71b6060195a17, type: 3}
           guid: 369af3e504864f342bb71b6060195a17
         sceneType: 0
-      - reference:
-          asset: {fileID: 102900000, guid: e29fe50606a07e34f95333f668b8ff69, type: 3}
-          guid: e29fe50606a07e34f95333f668b8ff69
-        sceneType: 2
-      - reference:
-          asset: {fileID: 102900000, guid: fb71afcdc3ad6f24a88d846ff8f784bb, type: 3}
-          guid: fb71afcdc3ad6f24a88d846ff8f784bb
-        sceneType: 1
     - Key: 999999
       Value:
       - reference:
