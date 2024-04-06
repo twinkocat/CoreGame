@@ -5,25 +5,49 @@
 #region
 
 using System;
+using System.Collections;
 using System.Collections.Generic;
 
 #endregion
 
 namespace twinkocat.Core.Utilities
 {
-    public static class CollectionExtensions
+    public static class SystemExtensions
     {
-        public static bool IsNull<T>(this ICollection<T> iCollection)
+        public static T Max<T>(T first, T second) => Comparer<T>.Default.Compare(first, second) > 0 ? first : second;
+    }
+    
+    public static class DictionaryExtensions
+    {
+        public static bool IsNull<TK, TV>(this IDictionary<TK, TV> iCollection)
         {
             return iCollection is null;
         }
 
-        public static bool IsEmpty<T>(this ICollection<T> iCollection)
+        public static bool IsEmpty<TK, TV>(this IDictionary<TK, TV> iCollection)
         {
             return iCollection.Count == 0;
         }
 
-        public static bool IsNullOrEmpty<T>(this ICollection<T> iCollection)
+        public static bool IsNullOrEmpty<TK, TV>(this IDictionary<TK, TV> iCollection)
+        {
+            return iCollection.IsNull() || iCollection.IsEmpty();
+        }
+    }
+    
+    public static class CollectionExtensions
+    {
+        public static bool IsNull(this ICollection iCollection)
+        {
+            return iCollection is null;
+        }
+
+        public static bool IsEmpty(this ICollection iCollection)
+        {
+            return iCollection.Count == 0;
+        }
+
+        public static bool IsNullOrEmpty(this ICollection iCollection)
         {
             return iCollection.IsNull() || iCollection.IsEmpty();
         }
