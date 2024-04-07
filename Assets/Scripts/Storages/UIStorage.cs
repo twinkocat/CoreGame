@@ -11,12 +11,11 @@ namespace twinkocat.Storages
 {
     public class UIStorage : ScriptableObject, IEnumerable<View>
     {
-        [SerializeField] private List<View> _views;
-
+        [SerializeField] private View[] _views;
 
         public IEnumerator<View> GetEnumerator()
         {
-            return _views.GetEnumerator();
+            return (IEnumerator<View>)_views.GetEnumerator();
         }
 
         IEnumerator IEnumerable.GetEnumerator()

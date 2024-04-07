@@ -20,8 +20,8 @@ namespace twinkocat.Gameplay.UI.MainMenu
             _mainMenuView.ExitButton.onClick.AddListener(ExitGame);
         }
 
-        private void LoadGame() => GameInstance.Instance.SetState(GameState.CreateGame(GameStateType.CoolGame));
-        private void StartNewGame() => GameInstance.Instance.SetState(GameState.CreateGame(GameStateType.Default));
+        private void LoadGame() => GameInstance.Instance.SetState(new GameState());
+        private void StartNewGame() => GameInstance.Instance.SetState(new GameState());
         private void OpenSettings() => WindowManager.Instance.Open(WindowType.Settings);
         private void ExitGame() => GameInstance.Instance.SetState(new ExitState());
 

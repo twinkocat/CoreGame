@@ -8,8 +8,7 @@ namespace twinkocat.Gameplay
     {
         Menu,
         Exit,
-        DefaultGame,
-        CoolGame,
+        Game,
         
         AddressableTest = 999999,
     }

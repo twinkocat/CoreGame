@@ -20,7 +20,11 @@ namespace twinkocat.Gameplay
         public IGameState CurrentState { get; private set; }
         public IGameSubState CurrentSubState { get; private set; }
 
-
+        // Game Initialization
+        public GameInstance()
+        {
+        }
+        
         public void SetState(IGameState newState)
         {
             CurrentState?.Exit();
