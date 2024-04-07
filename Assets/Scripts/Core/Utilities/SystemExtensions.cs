@@ -15,6 +15,11 @@ namespace twinkocat.Core.Utilities
     public static class SystemExtensions
     {
         public static T Max<T>(T first, T second) => Comparer<T>.Default.Compare(first, second) > 0 ? first : second;
+        
+        public static IEnumerable<T> GetEnumerable<T>(this T[] arr)
+        {
+            return arr;
+        }
     }
     
     public static class DictionaryExtensions

@@ -4,6 +4,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using twinkocat.Core.Utilities;
 using twinkocat.UI.Entities;
 using UnityEngine;
 
@@ -15,7 +16,7 @@ namespace twinkocat.Storages
 
         public IEnumerator<View> GetEnumerator()
         {
-            return (IEnumerator<View>)_views.GetEnumerator();
+            return _views.GetEnumerable().GetEnumerator();
         }
 
         IEnumerator IEnumerable.GetEnumerator()
