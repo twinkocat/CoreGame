@@ -39,6 +39,12 @@ namespace twinkocat.Core.Utilities
             return Object.Instantiate(item, position, quaternion, parent);
         }
 
+        public static T WithName<T>(this T target, string name) where T : Object
+        {
+            target.name = name;
+            return target;
+        }
+        
         public static T LoadAndInstantiate<T>(string path) where T : Object
         {
             return LoadAndInstantiate<T>(path, Vector3.zero, Quaternion.identity);

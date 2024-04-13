@@ -6,21 +6,7 @@ namespace twinkocat.Core.Utilities
     public abstract class SingletonBehaviour<T> : MonoBehaviour where T : SingletonBehaviour<T>
     {
         private static T _instance;
-        private static readonly object _lock = new();
-
-        public static T Instance
-        {
-            get
-            {
-                lock (_lock)
-                {
-                    if (_instance) return _instance;
-
-                    return _instance ??= RemoveAndKeepOneInstance() ?? UnityExtensions.SpawnComponent<T>();
-                }
-            }
-        }
-
+        public static T Instance => _instance ??= RemoveAndKeepOneInstance() ?? UnityExtensions.SpawnComponent<T>();
 
         private static T RemoveAndKeepOneInstance()
         {
