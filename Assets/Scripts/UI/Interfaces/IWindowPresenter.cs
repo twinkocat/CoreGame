@@ -10,8 +10,5 @@ namespace twinkocat.UI.Interfaces
     {
         WindowType WindowType { get; }
         bool IsStackable { get; }
-
-        void OpenWindow();
-        void CloseWindow();
     }
 }

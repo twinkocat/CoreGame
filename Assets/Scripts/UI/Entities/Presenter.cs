@@ -6,8 +6,8 @@ namespace twinkocat.UI.Entities
     public abstract class Presenter<TView> : IPresenter where TView : View
     {
         private TView _viewPrefab;
-        protected TView View;
-
+        private TView _viewInstance;
+        
         public bool TryInjectViewComponent(View viewPrefab)
         {
             if (_viewPrefab is not null || viewPrefab is not TView tViewPrefab) return false;
@@ -16,21 +16,33 @@ namespace twinkocat.UI.Entities
             return true;
         }
 
-        public void SpawnView()
+        private TView SpawnView() => Object.Instantiate(_viewPrefab);
+
+        public void Open(Transform parent = null)
         {
-            View = Object.Instantiate(_viewPrefab);
+            if (_viewInstance == null)
+            {
+                _viewInstance = SpawnView();
+                OnSpawnView(_viewInstance);
+            }
+            
+            _viewInstance.transform.SetParent(parent);
+            _viewInstance.gameObject.SetActive(true);
+            OnOpen(_viewInstance);
         }
-
-        public virtual void Open()
+        
+        public void Close()
         {
-            if (View == null) SpawnView();
-
-            View.gameObject.SetActive(true);
+            _viewInstance.gameObject.SetActive(false);
+            OnClose(_viewInstance);
         }
+        
+        protected virtual void OnSpawnView(TView view) { }
+        protected virtual void OnOpen(TView view) { }
+        protected virtual void OnClose(TView view) { }
 
-        public virtual void Close()
+        public virtual void Dispose()
         {
-            View.gameObject.SetActive(false);
         }
     }
 }
