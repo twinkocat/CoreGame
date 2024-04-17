@@ -23,14 +23,17 @@ namespace twinkocat.Core
         [SerializeField] private bool debugMode;
         [SerializeField] private bool logEnabled;
         [SerializeField] private BootstrapperStorage bootstrapperStorage;
-        private readonly Dictionary<Scene, IBootstrapper> _activeBootstrapper = new();
 
-        private readonly ServiceLocator _serviceLocator = ServiceLocator.GetInstance();
+        private ServiceLocator _serviceLocator;
+        private Dictionary<Scene, IBootstrapper> _activeBootstrapper;
 
         private void Awake()
         {
             this.DontDestroyOnLoad();
 
+            _activeBootstrapper = new Dictionary<Scene, IBootstrapper>();
+            _serviceLocator = ServiceLocator.GetInstance();
+            
             Defines.IsDebugMode = debugMode;
             Debug.unityLogger.logEnabled = logEnabled;
             Coroutines.Initialize(this);
