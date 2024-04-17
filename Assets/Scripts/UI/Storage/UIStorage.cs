@@ -8,15 +8,15 @@ using twinkocat.Core.Utilities;
 using twinkocat.UI.Entities;
 using UnityEngine;
 
-namespace twinkocat.Storages
+namespace twinkocat.UI.Storage
 {
     public class UIStorage : ScriptableObject, IEnumerable<View>
     {
-        [SerializeField] private View[] _views;
+        [SerializeField] private View[] views;
 
         public IEnumerator<View> GetEnumerator()
         {
-            return _views.GetEnumerable().GetEnumerator();
+            return views.GetEnumerable().GetEnumerator();
         }
 
         IEnumerator IEnumerable.GetEnumerator()

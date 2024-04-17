@@ -3,7 +3,7 @@
 // (c) 2024 twinkocat. All rights reserved.
 
 using twinkocat.Core.Editor;
-using twinkocat.Storages;
+using twinkocat.UI.Storage;
 using UnityEditor;
 
 namespace twinkocat.UI.Editor

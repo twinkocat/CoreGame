@@ -20,9 +20,9 @@ namespace twinkocat.Core
 {
     public class ApplicationBehaviour : MonoBehaviour
     {
-        [SerializeField] private bool _debugMode;
-        [SerializeField] private bool _logEnabled;
-        [SerializeField] private BootstrapperStorage _bootstrapperStorage;
+        [SerializeField] private bool debugMode;
+        [SerializeField] private bool logEnabled;
+        [SerializeField] private BootstrapperStorage bootstrapperStorage;
         private readonly Dictionary<Scene, IBootstrapper> _activeBootstrapper = new();
 
         private readonly ServiceLocator _serviceLocator = ServiceLocator.GetInstance();
@@ -31,8 +31,8 @@ namespace twinkocat.Core
         {
             this.DontDestroyOnLoad();
 
-            Defines.IsDebugMode = _debugMode;
-            Debug.unityLogger.logEnabled = _logEnabled;
+            Defines.IsDebugMode = debugMode;
+            Debug.unityLogger.logEnabled = logEnabled;
             Coroutines.Initialize(this);
         }
 
@@ -81,7 +81,7 @@ namespace twinkocat.Core
 
         private bool TryFindPrefabInStorage(out IBootstrapper prefab, Scene scene)
         {
-            var bootstrapperDictionary = _bootstrapperStorage.Scenes;
+            var bootstrapperDictionary = bootstrapperStorage.Scenes;
 
             if (bootstrapperDictionary.IsNull()) throw new NullReferenceException();
 
